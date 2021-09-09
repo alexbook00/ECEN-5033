@@ -1,0 +1,19 @@
+- hosts: machine1
+  become: 'yes'
+  tasks:
+    - name: install git
+      apt:
+        name: git
+    - name: install java open jdk 8
+      apt:
+        name: openjdk-8-jdk
+    - name: clone project repo
+      git:
+        repo: 'https://github.com/LuisJoseSanchez/hello-world-java'
+        dest: /home/vagrant/project
+        clone: 'yes'
+    - name: build project
+      shell:
+        cmd: javac HelloWorld.java
+      args:
+        chdir: /home/vagrant/project
