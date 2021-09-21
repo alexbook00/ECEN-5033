@@ -1,0 +1,31 @@
+version: "3.3"
+
+services:
+  server:
+    build: ./server
+    volumes:
+      - ./server:/opt/services/server/src
+    networks:
+      - default_net
+    # environment:
+    #   - FLASK_APP = app
+    #   - FLASK_ENV = development
+    #   - MESSAGE = "this is the ping message"
+    #   - PERIOD = 1
+    env_file:
+      - env_file
+    ports:
+      - "8080:80"
+  client:
+    build: ./client
+    volumes:
+      - .:/opt/services/client/src
+    networks:
+      - default_net
+    env_file:
+      - env_file
+    depends_on:
+      - server
+networks:
+  default_net:
+    driver: bridge

@@ -1,0 +1,5 @@
+FLASK_APP=app
+FLASK_ENV=development
+MESSAGE=this is the ping message
+PERIOD=1
+IP_ADDRESS=172.18.0.2

@@ -1,0 +1,24 @@
+Vagrant.configure("2") do |config|
+	# don't need (config.vm.define "machine1" do |machine1|) because we're running everything on one machine
+	config.vm.box = "ubuntu/bionic64"
+	config.vm.network :private_network, ip:"192.168.33.10"
+	config.vm.provider "virtualbox" do |cfg_vb|
+		cfg_vb.memory = "1024"
+	end
+
+	# https://stackoverflow.com/questions/29276140/can-i-use-docker-compose-to-provision-vagrant-directly
+	config.vagrant.plugins = "vagrant-docker-compose"
+	# config.vm.provision "shell", privileged: true, inline: <<-SHELL
+	# 	apt-get update -y
+	# 	vagrant plugin install vagrant-docker-compose -y
+	# SHELL
+	config.vm.provision :docker
+	config.vm.provision :docker_compose
+
+	config.vm.provision "file", source: "./", destination: "$HOME"
+
+	# config.vm.provision :docker_compose, yml: "/vagrant/docker-compose.yml", rebuild: true, run: "always"
+	# config.vm.provision "file", source: "./docker-compose.yml", destination: "$HOME/docker-compose.yml"
+	# config.vm.provision "file", source: "./client", destination: "$HOME/client"
+	# config.vm.provision "file", source: "./server", destination: "$HOME/server"
+end
