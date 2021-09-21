@@ -7,11 +7,6 @@ services:
       - ./server:/opt/services/server/src
     networks:
       - default_net
-    # environment:
-    #   - FLASK_APP = app
-    #   - FLASK_ENV = development
-    #   - MESSAGE = "this is the ping message"
-    #   - PERIOD = 1
     env_file:
       - env_file
     ports:
