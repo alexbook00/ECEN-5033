@@ -1,0 +1,6 @@
+[template]
+src = "nginx_conf.tmpl"
+dest = "/tmp/nginx.conf"
+keys = [
+    "/flask_app_basic",
+]

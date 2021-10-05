@@ -1,0 +1,15 @@
+events {}
+
+http {
+     upstream myapp1 {
+       {{range gets "/flask_app_basic/*"}}
+         server {{.Value}};
+       {{end}}
+     }
+     server {
+         listen 80;
+         location / {
+             proxy_pass http://myapp1;
+         }
+     }
+}
