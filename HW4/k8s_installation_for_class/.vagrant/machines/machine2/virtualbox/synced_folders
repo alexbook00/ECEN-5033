@@ -1,1 +1,0 @@
-{"virtualbox":{"/vagrant_data":{"create":true,"guestpath":"/vagrant_data","hostpath":"C:/Users/alexb/OneDrive/Desktop/ECEN-5033/HW4/k8s_installation_for_class/machine2_data","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/alexb/OneDrive/Desktop/ECEN-5033/HW4/k8s_installation_for_class","disabled":false,"__vagrantfile":true}}}
