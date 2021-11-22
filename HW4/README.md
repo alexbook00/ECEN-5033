@@ -1,7 +1,7 @@
 # Homework 4, ECEN 5033
 
 ## Assumptions
-It is assumed that users have Kubernetes installed on 3 VMS (machine1, machine2, machine3) and have a registry running at 192.168.33.10:5000.
+It is assumed that users have Kubernetes installed on 3 VMs (machine1, machine2, machine3) and have a registry running at 192.168.33.10:5000.
 
 In order to meet said assumptions, you will need to install vagrant, directions can be found [here](https://www.vagrantup.com/downloads). You will also need a VM that is supported by Vagrant, information can be found [here](https://www.vagrantup.com/docs/providers) (for the provided Vagrantfile, VirtualBox is necessary).
 
