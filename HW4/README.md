@@ -71,6 +71,7 @@ Once the above two requirements have been met, navigate to the `k8s_installtion_
    into:
   
    `ExecStart=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELET_KUBEADM_ARGS $KUBELET_EXTRA_ARGS --node-ip=192.168.33.12`
+   
 23. Edit the previously-copied command as follows, then paste and run it:
     
     ```
